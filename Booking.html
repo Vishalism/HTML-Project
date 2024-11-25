@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>NATURE</title>
+	<link rel="stylesheet" type="text/css" href="css/booking.css">
+	
+	<script>
+		function formdata(){
+			var firstname=document.forms["Booking Here"]["First Name"]
+			var lastname=document.forms["Booking Here"]["Last Name"]
+			var address=document.forms["Booking Here"]["Address"]
+			var mobileno=document.forms["Booking Here"]["Mobile Number"]
+			var email=document.forms["Booking Here"]["e-Mail"]
+			var password=document.forms["Booking Here"]["Password"]
+			var pass1=/^(?=.*[0-9])(?=.*[!@])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
+
+			var re_enterpassword=document.forms["Booking Here"]["Re-Enter Password"]
+
+			if (firstname.value==""){
+				window.alert("Please enter your first name");
+				firstname.focus();
+				return false;
+			}
+			if (lastname.value==""){
+				window.alert("Please enter your last name");
+				lastname.focus();
+				return false;
+			}
+			if (address.value==""){
+				window.alert("Please enter your address");
+				address.focus();
+				return false;
+			}
+			if (mobileno.value==""){
+				window.alert("Please enter a your mobile number");
+				mobileno.focus();
+				return false;
+			}
+			if (email.value == ""){
+				window.alert("Please enter a valid email address");
+				email.focus();
+				return false;
+			}
+			if (email.value.indexOf("@") < 0){
+				window.alert("Please enter a valid email address")
+				email.focus();
+				return false;
+			}
+			if (email.value.indexOf(".com") < 0){
+				window.alert("Please enter a valid email address")
+				email.focus();
+				return false;
+			}
+
+			if (password.value==""){
+				window.alert("Please enter a valid password");
+				password.focus();
+				return false;
+			}
+			if (re_enterpassword.value==""){
+				window.alert("Please re_enter your password");
+				re_enterpassword.focus();
+				return false;
+			}
+
+
+			return true;
+		}
+	</script>
+
+
+</head>
+<body>
+	<header>
+		<div class="main">
+			<div class="logo">
+				<img src="bird.png">
+			</div>
+			<ul>
+				<li><a href="..\Nature\index.html">Home</a>
+				<li><a href="..\Nature\Gallaries.html">Gallery</a>
+				<li class="active"><a href="..\Nature\Booking.html">Booking</a>
+				<li><a href="..\Nature\About.html">About</a>
+				<li><a href="..\Nature\Contact.html">Contact</a>
+					
+				</li>
+			</ul>
+			
+		</div>
+
+		<div class="hd"> Booking Here</div>
+
+		<div class="booking">
+			<form name="Booking Here" method="post" id="booking" action="BookingDone.html" onsubmit="return formdata()"> 
+				
+				<label>First Name</label>
+				<input type="text" name="First Name" size="50" placeholder="Please enter your First Name."><br>
+
+				<label>Last Name</label>
+				<input type="text" name="Last Name" size="50" placeholder="Please enter your Last Name."><br>
+
+				<label>Address</label>
+				<input type="text" name="Address" size="50" placeholder="Please enter your Address."><br>
+
+				<label>Mobile number</label>
+				<input type="text" name="Mobile Number" size="30" placeholder="Please enter your Mobile number."><br>
+
+				<label>e-Mail</label>
+				<input type="text" name="e-Mail" size="50" placeholder="Please enter your e-Mail Id."><br>
+
+				<label>Password</label>
+				<input type="password" name="Password" size="50" placeholder="Please enter your Password."><br>
+
+				<label>Re-Enter Password</label>
+				<input type="password" name="Re-Enter Password" size="50" placeholder="Please Re-enter your Password."><br>
+
+				<input type="Submit" value="Submit" id="submit">
+
+
+</form> 
+		</div>
+
+	</header>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>NATURE</title>
+	<link rel="stylesheet" type="text/css" href="css/galary.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+	<header>
+		<div class="main">
+			<div class="logo">
+				<img src="bird.png">
+			</div>
+			<ul>
+				<li><a href="..\Nature\index.html">Home</a>
+				<li class="active"><a href="..\Nature\Gallaries.html">Gallery</a>
+				<li><a href="..\Nature\Booking.html">Booking</a>
+				<li><a href="..\Nature\About.html">About</a>
+				<li><a href="..\Nature\Contact.html">Contact</a>
+					
+				</li>
+			</ul>
+		
+	</header>
+
+<div id="gallery">
+	<div id="panel">
+		<img id="largeImage" src="Project/img_1_large.jpg">
+		<div id="description">1st image description</div>
+	</div>
+	<div id="thumbs">
+		<img src="Project/img_1_thumbnail.jpg" alt="1st image description" />
+		<img src="Project/img_2_thumbnail.jpg" alt="2nd image description" />
+		<img src="Project/img_3_thumbnail.jpg" alt="3rd image description" />
+		<img src="Project/img_4_thumbnail.jpg" alt="4th image description" />
+		<img src="Project/img_5_thumbnail.jpg" alt="5th image description" />
+		<img src="Project/img_6_thumbnail.jpg" alt="6th image description" />
+		<img src="Project/img_7_thumbnail.jpg" alt="7th image description" />
+		<img src="Project/img_8_thumbnail.jpg" alt="8th image description" />
+		<img src="Project/img_9_thumbnail.jpg" alt="9th image description" />
+	</div>
+</div>
+<script>
+	$('#thumbs').delegate('img','click',function(){
+		$('#largeImage').attr('src',$(this).attr('src').replace('thumbnail','large'));
+		$('#description').html($(this).attr('alt'));
+	});
+</script>
+
+</body>
+</html>
